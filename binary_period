@@ -1,0 +1,20 @@
+Thuật toán tìm kiếm nhị phân:
+a1<=a2<=a3...<=an
+và giá trị cần tìm x. Hàm tìm kiếm nhị phân sau trở về vị trí đầu tiên nhỏ nhất là i mà a[i]=k;
+           int tknhiphan(l,r,x)
+{
+         g=(l+r)/2;
+while ((l!=g) && (r!=g))
+{
+                  if (a[g]>=x) r=g;
+                  	else  l=g;
+                  		g=(l+r)/2;
+                 	 }
+                 	 if (a[r]==x) return r;
+                  		else return -1;
+				}
+   Để điều chỉnh hàm trả về vị trí cuối cùng lớn hất là i mà a[i] = k như sau: 
+   ===> if a[g]>x
+   		r=g;
+		else l=g;
+		return l;
